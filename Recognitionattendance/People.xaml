@@ -1,0 +1,83 @@
+﻿<Page
+    x:Class="Recognitionattendance.People"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Recognitionattendance"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal"
+                    Background="Black"
+                    
+                   >
+
+            <Button Content="Home" 
+                    Background="Transparent" 
+                    Foreground="#FFB7B9E0"
+                    Margin="20,00,00,00"
+                    BorderBrush="Transparent"
+                    x:Name="HomeButton"
+                    Click="HomeButton_Click"
+                    />
+
+            <Button Content="Attendance" 
+                    Background="Transparent" 
+                    Foreground="#FFB7B9E0"
+                    Margin="20,00,00,00"
+                    BorderBrush="Transparent"
+                    x:Name="AttendanceButton"
+                    Click="AttendanceButton_Click"
+                    />
+
+            <Button Content="People" 
+                    Background="Transparent" 
+                    Foreground="#FFB7B9E0"
+                    Margin="20,00,00,00"
+                    BorderBrush="Transparent"
+                    x:Name="PeopleButton"
+                    Click="PeopleButton_Click"
+                    />
+
+            <Button Content="Back up" 
+                    Background="Transparent" 
+                    Foreground="#FFB7B9E0"
+                    Margin="20,00,00,00"
+                    BorderBrush="Transparent"
+                    x:Name="BackupButton"
+                    Click="BackupButton_Click"
+                    />
+        </StackPanel>
+       
+        
+
+        <ListView x:Name="peopleList" Grid.Row="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding ImageName}"
+                               Height="100"
+                               Width="100"
+                               />
+
+                        <StackPanel Orientation="Vertical" Margin="20">
+                            <TextBlock Text="{Binding LastName}"/>
+                            <TextBlock Text="{Binding FirstName}"/>
+                        </StackPanel>
+                    </StackPanel>
+                  
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Page>

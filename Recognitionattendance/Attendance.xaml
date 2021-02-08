@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="Recognitionattendance.Attendance"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Recognitionattendance"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal"
+                    Background="Black"
+                    
+                   >
+
+            <Button Content="Home" 
+                    Background="Transparent" 
+                    Foreground="#FFB7B9E0"
+                    Margin="20,00,00,00"
+                    BorderBrush="Transparent"
+                    x:Name="HomeButton"
+                    Click="HomeButton_Click"
+                    />
+
+            <Button Content="Attendance" 
+                    Background="Transparent" 
+                    Foreground="#FFB7B9E0"
+                    Margin="20,00,00,00"
+                    BorderBrush="Transparent"
+                    />
+            <Button Content="People" 
+                    Background="Transparent" 
+                    Foreground="#FFB7B9E0"
+                    Margin="20,00,00,00"
+                    BorderBrush="Transparent"
+                    x:Name="PeopleButton"
+                    Click="PeopleButton_Click"
+                    />
+
+            <Button Content="Back up" 
+                    Background="Transparent" 
+                    Foreground="#FFB7B9E0"
+                    Margin="20,00,00,00"
+                    BorderBrush="Transparent"
+                    x:Name="BackupButton"
+                    Click="BackupButton_Click"
+                    />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="1"
+                    
+                    >
+            <DatePicker x:Name="DatePicker"
+                        DateChanged="DatePicker_DateChanged"/>
+
+        </StackPanel>
+
+        <ListView>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Hanna Bianka" FontWeight="Bold"/>
+                        <TextBlock Text="7AM" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </Grid>
+</Page>
